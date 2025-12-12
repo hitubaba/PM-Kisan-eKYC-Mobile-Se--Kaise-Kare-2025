@@ -65,45 +65,211 @@
     .faq q{font-style:italic}
     .small-muted{color:var(--muted);font-size:13px}
   </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Header -->
+    <header class="site-header">
+      <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#1f4ed8,#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px">PM</div>
+      <div class="brand">
+        <h1>PM Kisan eKYC — Mobile Guide (2025)</h1>
+        <p>Step-by-step mobile eKYC, face authentication, status check, fixes & FAQ — updated 2025</p>
+      </div>
+      <div style="margin-left:auto" class="share">
+        <button class="btn" onclick="copyUrl()">Copy Page Link</button>
+        <button class="btn dark" onclick="openShare()">Share</button>
+      </div>
+    </header>
 
-  <!-- ADDED: Footer visitor bar styles (kept separate to avoid conflicts) -->
+    <div class="layout">
+      <!-- Main article -->
+      <main>
+        <div class="card content">
+          <div class="meta-row">
+            <div class="badge">Updated 2025</div>
+            <div class="small-muted">By <strong>Hitesh</strong></div>
+            <div class="small-muted">• Read: 4 min</div>
+            <div style="margin-left:auto" class="small-muted">Published: Dec 2025</div>
+          </div>
+
+          <article>
+            <h1>PM Kisan eKYC Mobile Se Kaise Kare 2025 — Complete Step-by-Step Guide</h1>
+            <p class="lead">PM Kisan eKYC mobile से करना आज बहुत आसान है। इस guide में हम mobile से Aadhaar OTP के साथ eKYC और नए Face Authentication तरीके को step-by-step समझाएँगे — साथ में troubleshooting और FAQs भी दिए गए हैं।</p>
+
+            <img class="hero-illustration" src="https://hitubaba.github.io/assets/pmkisan-ekyc-banner.png" alt="PM Kisan eKYC mobile guide illustration" />
+
+            <h2 id="whatis">PM Kisan eKYC — क्या है और क्यों ज़रूरी?</h2>
+            <p>eKYC यानी electronic Know Your Customer — इसका मकसद सरकार को digitally verify करना है कि लाभार्थी सही है। अगर आपका eKYC पूरा नहीं हुआ है तो PM Kisan की किस्तें रोक दी जाती हैं।</p>
+
+            <div class="callout">
+              <strong>Quick note:</strong> अगर Aadhaar में mobile number link नहीं है तो आप <strong>Face Authentication</strong> से भी eKYC कर सकते हैं — नीचे पूरा तरीका दिया गया है।
+            </div>
+
+            <h2 id="steps">Mobile से PM Kisan eKYC कैसे करें — Step-by-step</h2>
+
+            <p><strong>Follow these exact steps:</strong></p>
+            <ol>
+              <li><strong>Official website खोलें:</strong> <a href="https://pmkisan.gov.in" target="_blank" rel="noopener">https://pmkisan.gov.in</a> — Mobile browser में Desktop mode ON करें (यदि कुछ विकल्प नहीं दिख रहे हों)।</li>
+              <li><strong>Home page पर "e-KYC" विकल्प चुनें:</strong> आधिकारिक पेज पर आपको <em>e-KYC (Aadhaar OTP)</em> और <em>Face Authentication</em> दोनों विकल्प मिलते हैं।</li>
+              <li><strong>Aadhaar Number डालें:</strong> अपना 12-digit Aadhaar डालें और <em>Get OTP</em> पर क्लिक करें।</li>
+              <li><strong>OTP Enter करें:</strong> Aadhaar से linked mobile number पर आए OTP को डालकर verify कर दें। Successful होने पर eKYC instantly complete हो जाएगा।</li>
+            </ol>
+
+            <h3 id="face-auth">NEW (2025) — Face Authentication (Aadhaar mobile number न होने पर)</h3>
+            <p>अगर Aadhaar में मोबाइल नंबर linked नहीं है तो face-auth का तरीका use कर सकते हैं:</p>
+            <ul>
+              <li>Play Store से <strong>PM Kisan Face Authentication</strong> app डाउनलोड करें।</li>
+              <li>App खोलकर Aadhaar number डालें और front-camera से अपना face scan करें।</li>
+              <li>Matching successful होने पर eKYC update हो जाएगा।</li>
+            </ul>
+
+            <h2 id="status">eKYC Status कैसे चेक करें?</h2>
+            <p>PM-Kisan site → <strong>Beneficiary Status</strong> पर जाएँ, यहाँ आप Aadhaar / Account / Mobile number डालकर status देख सकते हैं।</p>
+
+            <h2 id="errors">eKYC fail होने के कारण और समाधान</h2>
+            <table>
+              <thead><tr><th>समस्या</th><th>कारण</th><th>समाधान</th></tr></thead>
+              <tbody>
+                <tr><td>OTP नहीं आना</td><td>Server busy / wrong mobile</td><td>रात के समय (10pm–6am) try करें; Aadhaar में सही mobile बतौर registered हो</td></tr>
+                <tr><td>Details mismatch</td><td>Aadhaar और बैंक विवरण अलग</td><td>बैंक में correction कराएँ या Aadhaar update कराएँ</td></tr>
+                <tr><td>Too many attempts</td><td>Temporary block</td><td>24 घंटे बाद पुनः प्रयास करें</td></tr>
+                <tr><td>Mobile not linked</td><td>Aadhaar में number missing</td><td>Face Authentication app से verify करें</td></tr>
+              </tbody>
+            </table>
+
+            <div class="danger">
+              <strong>Important:</strong> eKYC न होने पर आपकी अगली PM Kisan किस्त on hold हो सकती है — इसे तुरंत verify करें।
+            </div>
+
+            <h2 id="tips">Quick Tips to Get eKYC Done Fast</h2>
+            <ul>
+              <li>Chrome incognito mode use करें — इससे cache/old session interfere नहीं करेगा।</li>
+              <li>Server busy होने पर off-peak hours में (रात) try करें।</li>
+              <li>Aadhaar और bank में same name/status रखें।</li>
+              <li>Face auth के लिए अच्छा light और clear camera angle रखें।</li>
+            </ul>
+
+            <h2 id="faq">FAQ — अक्सर पूछे जाने वाले सवाल</h2>
+            <div class="faq">
+              <h3>क्या eKYC न होने पर किस्त रुक जाएगी?</h3>
+              <p>हाँ — यदि eKYC pending है तो किस्त pending/on-hold में दिख सकती है। सबसे पहले eKYC और bank seeding check करें।</p>
+
+              <h3>Face Authentication क्या सुरक्षित है?</h3>
+              <p>Face Authentication UIDAI के guidelines के अनुरूप काम करता है; हमेशा आधिकारिक app या website का ही उपयोग करें।</p>
+
+              <h3>यदि OTP नहीं आता तो क्या करें?</h3>
+              <p>Retry करें, network बदलकर try करें, या face authentication का option use करें।</p>
+            </div>
+
+            <h2 id="conclusion">Conclusion</h2>
+            <p>PM Kisan eKYC 2025 में mobile से काफी आसान और fast हो गया है — Aadhaar OTP से instant verification possible है और अगर mobile number linked नहीं है तो Face Authentication विकल्प है। अगर आपकी किस्त रुकी हुई है तो सबसे पहले eKYC और bank seeding verify करें।</p>
+
+            <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap;">
+              <button class="btn" onclick="copyArticle()">Copy Article Text</button>
+              <button class="btn" onclick="window.print()">Print / Save PDF</button>
+              <a class="btn" href="https://pmkisan.gov.in" target="_blank" rel="noopener">Open PM Kisan Site</a>
+            </div>
+          </article>
+        </div>
+
+        <footer class="site-footer">
+          <div>© <strong>PM Kisan eKYC Guide</strong> — Updated 2025</div>
+          <div class="small-muted">Made with ❤️ — Hitubaba</div>
+        </footer>
+      </main>
+
+      <!-- Right column: TOC, Related posts -->
+      <aside>
+        <div class="card" style="position:sticky;top:18px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <strong>Contents</strong>
+            <span class="small-muted">Jump to</span>
+          </div>
+          <nav class="toc">
+            <a href="#whatis">PM Kisan eKYC — क्या है?</a>
+            <a href="#steps">Step-by-step mobile eKYC</a>
+            <a href="#face-auth">Face Authentication (2025)</a>
+            <a href="#status">Status Check</a>
+            <a href="#errors">Fail Reasons</a>
+            <a href="#tips">Quick Tips</a>
+            <a href="#faq">FAQ</a>
+            <a href="#conclusion">Conclusion</a>
+          </nav>
+
+          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(11,19,36,0.04)" />
+
+          <div>
+            <strong>Related Guides</strong>
+            <ul style="padding-left:18px;margin-top:8px;color:var(--muted)">
+              <li><a href="#" style="color:inherit;text-decoration:none">PM Kisan Status Check 2025</a></li>
+              <li><a href="#" style="color:inherit;text-decoration:none">Aadhaar Mobile Link Kaise Kare</a></li>
+              <li><a href="#" style="color:inherit;text-decoration:none">Bank Seeding for PM Kisan</a></li>
+           <!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PM Kisan eKYC Mobile Se Kaise Kare 2025 — Complete Guide</title>
+  <meta name="description" content="PM Kisan eKYC mobile se kaise kare (2025 updated). Aadhaar OTP, face authentication, status check, common errors and step-by-step mobile guide with screenshots and FAQ." />
+  <meta name="keywords" content="PM Kisan eKYC, PM Kisan eKYC mobile se kaise kare, PM Kisan 2025, PM Kisan face authentication, PM Kisan status check" />
+  <link rel="canonical" href="https://hitubaba.github.io/PM-Kisan-eKYC-Mobile-Se--Kaise-Kare-2025/" />
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="PM Kisan eKYC Guide" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="PM Kisan eKYC Mobile Se Kaise Kare 2025 — Complete Guide" />
+  <meta property="og:description" content="PM Kisan eKYC mobile se kaise kare (2025 updated). Aadhaar OTP, face authentication, status check, common errors and step-by-step mobile guide with FAQ." />
+  <meta property="og:url" content="https://hitubaba.github.io/PM-Kisan-eKYC-Mobile-Se--Kaise-Kare-2025/" />
+  <meta property="og:image" content="https://hitubaba.github.io/assets/pmkisan-ekyc-banner.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#ffffff" />
+
   <style>
-    /* Footer Visitor Bar */
-    #visitorFooterBar {
-      position: fixed;
-      bottom: 12px;
-      left: 12px;
-      right: 12px;
-      max-width: 980px;
-      margin: 0 auto;
-      background: linear-gradient(90deg,#3b4fff,#6f8bff);
-      color: white;
-      padding: 12px 16px;
-      font-size: 15px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 10px 30px rgba(11,19,36,0.18);
-      border-radius: 12px;
-      z-index: 9999;
-      font-weight: 600;
-      letter-spacing: 0.2px;
+    /* Minimal professional blog styles - mobile-first */
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --muted:#617085; --accent:#1f4ed8; --danger:#ef4444;
+      --text:#0b1220; --maxw:900px;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(11,19,36,0.06);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    #visitorFooterBar strong { font-size:16px; color:#fff; }
-    #visitorFooterBar button#visitorRetry {
-      background: rgba(255,255,255,0.12);
-      color: #fff;
-      border-radius: 10px;
-      padding: 6px 10px;
-      border: none;
-      cursor: pointer;
-      font-weight:700;
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);font-family:var(--sans);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.6}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:18px}
+    header.site-header{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .brand{display:flex;flex-direction:column}
+    .brand h1{margin:0;font-size:20px}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .meta-row{display:flex;gap:12px;color:var(--muted);font-size:13px;align-items:center;margin-bottom:12px}
+    .badge{background:#eef2ff;color:var(--accent);padding:6px 10px;border-radius:10px;font-weight:600;font-size:13px}
+    article h1{font-size:28px;margin:8px 0 6px}
+    article h2{font-size:20px;margin:18px 0 8px}
+    article h3{font-size:16px;margin:14px 0 6px}
+    .lead{font-size:16px;color:var(--muted);margin-bottom:10px}
+    .toc{background:#fbfdff;border:1px solid rgba(15,23,42,0.03);padding:10px;border-radius:10px;font-size:14px}
+    .toc a{display:block;color:#0b5fff;text-decoration:none;margin:6px 0}
+    .content p{margin:12px 0}
+    table{width:100%;border-collapse:collapse;margin:12px 0;background:transparent}
+    table th, table td{border:1px solid rgba(11,19,36,0.06);padding:10px;text-align:left}
+    .callout{background:linear-gradient(180deg,#fff,#fbfbfd);border-left:4px solid var(--accent);padding:12px;border-radius:8px;margin:12px 0}
+    .danger{background:#fff7f7;border-left:4px solid var(--danger);padding:12px;border-radius:8px;margin:12px 0}
+    .buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .btn{padding:8px 12px;border-radius:10px;border:0;background:#eef2ff;color:var(--accent);font-weight:700;cursor:pointer}
+    .btn.dark{background:var(--text);color:#fff}
+    .share{display:flex;gap:8px;align-items:center}
+    pre{background:#0f1724;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto;font-family:var(--mono);font-size:13px}
+    footer.site-footer{margin-top:18px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+    @media(min-width:760px){
+      .layout{display:grid;grid-template-columns:1fr 300px;gap:18px}
+      .wrap{padding:28px}
     }
-    @media(max-width:520px){
-      #visitorFooterBar {padding:10px;border-radius:10px; font-size:14px; left:8px; right:8px; bottom:8px}
-      #visitorFooterBar button#visitorRetry {padding:6px 8px}
-    }
+    /* mobile specific */
+    .hero-illustration{display:block;margin:14px auto 10px;max-width:320px}
+    .mobile-only{display:inline-block}
+    @media(min-width:760px){ .mobile-only{display:none} }
+    .faq q{font-style:italic}
+    .small-muted{color:var(--muted);font-size:13px}
   </style>
 </head>
 <body>
@@ -251,14 +417,100 @@
     </div>
   </div>
 
-  <!-- FOOTER VISITOR BAR (ADDED) -->
-  <div id="visitorFooterBar" aria-live="polite" role="status" style="display:none">
-    <span style="display:flex;align-items:center;gap:10px">
-      <span style="font-size:18px">👁</span>
-      <span>Unique Visitors:</span>
-      <strong id="visitorCount">...</strong>
-    </span>
-    <button id="visitorRetry" aria-label="Retry loading visitor count">Retry</button>
+  <!-- JSON-LD for Article + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "PM Kisan eKYC Mobile Se Kaise Kare 2025 — Complete Step-by-Step Guide",
+    "description": "PM Kisan eKYC mobile se kaise kare (2025 updated). Aadhaar OTP, face authentication, status check, common errors and step-by-step mobile guide with FAQ.",
+    "author": {
+      "@type": "Person",
+      "name": "Hitesh"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "PM Kisan eKYC Guide",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://hitubaba.github.io/assets/pmkisan-ekyc-banner.png"
+      }
+    },
+    "datePublished": "2025-12-11",
+    "dateModified": "2025-12-11"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "क्या eKYC न होने पर किस्त रुक जाएगी?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "हाँ — यदि eKYC pending है तो किस्त pending/on-hold में दिख सकती है। सबसे पहले eKYC और bank seeding check करें।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Face Authentication क्या सुरक्षित है?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Face Authentication UIDAI के guidelines के अनुरूप काम करता है; हमेशा आधिकारिक app या website का ही उपयोग करें।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "यदि OTP नहीं आता तो क्या करें?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Retry करें, network बदलकर try करें, या face authentication का option use करें।"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    function copyUrl(){
+      const url = location.href;
+      navigator.clipboard?.writeText(url).then(()=> alert('Link copied to clipboard'));
+    }
+    function copyArticle(){
+      const text = document.querySelector('article').innerText;
+      navigator.clipboard?.writeText(text).then(()=> alert('Article text copied'));
+    }
+    function openShare(){
+      if(navigator.share){
+        navigator.share({
+          title: document.title,
+          url: location.href
+        }).catch(()=> {});
+      } else {
+        copyUrl();
+      }
+    }
+    // Smooth scroll for hash links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  </script>
+</body>
+</html>
+
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
   </div>
 
   <!-- JSON-LD for Article + FAQ -->
@@ -346,90 +598,6 @@
         if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
       });
     });
-  </script>
-
-  <!-- ADDED: Robust visitor counter script -->
-  <script>
-  (async function(){
-    const NAMESPACE = 'pmkisan-ekyc-2025';
-    const KEY = 'unique';
-    const hitUrl = `https://api.countapi.xyz/hit/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(KEY)}`;
-    const getUrl = `https://api.countapi.xyz/get/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(KEY)}`;
-    const el = document.getElementById('visitorCount');
-    const bar = document.getElementById('visitorFooterBar');
-    const retryBtn = document.getElementById('visitorRetry');
-
-    function showBar(){ if(bar) bar.style.display = 'flex'; }
-    function setVal(v){
-      if(!el) return;
-      el.textContent = String(v);
-      try { localStorage.setItem('visitorCountBackup', String(v)); } catch(e){}
-    }
-    function setError(msg){
-      if(!el) return;
-      el.textContent = msg;
-    }
-
-    async function fetchCount(){
-      if(!el || !bar) return;
-      setError('Loading...');
-      showBar();
-
-      // if page served from file:// then don't call remote APIs
-      if(location.protocol === 'file:'){
-        const backup = localStorage.getItem('visitorCountBackup') || '0';
-        setError(backup + ' (offline)');
-        console.warn('Page served from file:// — use http(s) for countapi to work.');
-        return;
-      }
-
-      try{
-        const r = await fetch(hitUrl, {cache:'no-store'});
-        if(!r.ok) throw new Error('Hit failed status:'+r.status);
-        const j = await r.json();
-        if(typeof j.value !== 'undefined'){
-          setVal(j.value);
-          return;
-        } else {
-          throw new Error('Invalid JSON from hit');
-        }
-      }catch(primaryErr){
-        console.warn('Primary hit failed:', primaryErr);
-        try{
-          const r2 = await fetch(getUrl, {cache:'no-store'});
-          if(!r2.ok) throw new Error('Get failed status:'+r2.status);
-          const j2 = await r2.json();
-          if(typeof j2.value !== 'undefined'){
-            setVal(j2.value);
-            return;
-          } else {
-            throw new Error('Invalid JSON from get');
-          }
-        }catch(fallbackErr){
-          console.error('CountAPI fallback failed:', fallbackErr);
-          const backup = localStorage.getItem('visitorCountBackup');
-          if(backup){
-            el.textContent = backup + ' (cached)';
-          } else {
-            setError('Error');
-          }
-        }
-      }
-    }
-
-    if(retryBtn){
-      retryBtn.addEventListener('click', ()=> {
-        fetchCount();
-        retryBtn.disabled = true;
-        setTimeout(()=> retryBtn.disabled = false, 3000);
-      });
-    }
-
-    // initial run
-    fetchCount();
-    // update periodically
-    setInterval(fetchCount, 120 * 1000);
-  })();
   </script>
 </body>
 </html>
