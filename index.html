@@ -64,33 +64,46 @@
     @media(min-width:760px){ .mobile-only{display:none} }
     .faq q{font-style:italic}
     .small-muted{color:var(--muted);font-size:13px}
-    <style>
-  #visitorFooterBar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #3b4fff;
-    color: white;
-    padding: 12px 16px;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
-    border-radius: 12px 12px 0 0;
-    z-index: 9999;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
+  </style>
 
-  #visitorFooterBar strong {
-    color: #ffffff;
-    font-size: 18px;
-  }
-</style>
-  
+  <!-- ADDED: Footer visitor bar styles (kept separate to avoid conflicts) -->
+  <style>
+    /* Footer Visitor Bar */
+    #visitorFooterBar {
+      position: fixed;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      max-width: 980px;
+      margin: 0 auto;
+      background: linear-gradient(90deg,#3b4fff,#6f8bff);
+      color: white;
+      padding: 12px 16px;
+      font-size: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(11,19,36,0.18);
+      border-radius: 12px;
+      z-index: 9999;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    #visitorFooterBar strong { font-size:16px; color:#fff; }
+    #visitorFooterBar button#visitorRetry {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border-radius: 10px;
+      padding: 6px 10px;
+      border: none;
+      cursor: pointer;
+      font-weight:700;
+    }
+    @media(max-width:520px){
+      #visitorFooterBar {padding:10px;border-radius:10px; font-size:14px; left:8px; right:8px; bottom:8px}
+      #visitorFooterBar button#visitorRetry {padding:6px 8px}
+    }
   </style>
 </head>
 <body>
@@ -238,6 +251,16 @@
     </div>
   </div>
 
+  <!-- FOOTER VISITOR BAR (ADDED) -->
+  <div id="visitorFooterBar" aria-live="polite" role="status" style="display:none">
+    <span style="display:flex;align-items:center;gap:10px">
+      <span style="font-size:18px">👁</span>
+      <span>Unique Visitors:</span>
+      <strong id="visitorCount">...</strong>
+    </span>
+    <button id="visitorRetry" aria-label="Retry loading visitor count">Retry</button>
+  </div>
+
   <!-- JSON-LD for Article + FAQ -->
   <script type="application/ld+json">
   {
@@ -294,17 +317,7 @@
     ]
   }
   </script>
-<script>
-  fetch("https://api.countapi.xyz/hit/pmkisan-ekyc-2025/unique")
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("visitorCount").textContent = data.value;
-    })
-    .catch(() => {
-      document.getElementById("visitorCount").textContent = "Error";
-    });
-</script>
-  
+
   <script>
     function copyUrl(){
       const url = location.href;
@@ -334,11 +347,89 @@
       });
     });
   </script>
-  <!-- Visitor Counter Footer Bar -->
-<div id="visitorFooterBar">
-  <span>👁 Unique Visitors: <strong id="visitorCount">...</strong></span>
-</div>
 
+  <!-- ADDED: Robust visitor counter script -->
+  <script>
+  (async function(){
+    const NAMESPACE = 'pmkisan-ekyc-2025';
+    const KEY = 'unique';
+    const hitUrl = `https://api.countapi.xyz/hit/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(KEY)}`;
+    const getUrl = `https://api.countapi.xyz/get/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(KEY)}`;
+    const el = document.getElementById('visitorCount');
+    const bar = document.getElementById('visitorFooterBar');
+    const retryBtn = document.getElementById('visitorRetry');
+
+    function showBar(){ if(bar) bar.style.display = 'flex'; }
+    function setVal(v){
+      if(!el) return;
+      el.textContent = String(v);
+      try { localStorage.setItem('visitorCountBackup', String(v)); } catch(e){}
+    }
+    function setError(msg){
+      if(!el) return;
+      el.textContent = msg;
+    }
+
+    async function fetchCount(){
+      if(!el || !bar) return;
+      setError('Loading...');
+      showBar();
+
+      // if page served from file:// then don't call remote APIs
+      if(location.protocol === 'file:'){
+        const backup = localStorage.getItem('visitorCountBackup') || '0';
+        setError(backup + ' (offline)');
+        console.warn('Page served from file:// — use http(s) for countapi to work.');
+        return;
+      }
+
+      try{
+        const r = await fetch(hitUrl, {cache:'no-store'});
+        if(!r.ok) throw new Error('Hit failed status:'+r.status);
+        const j = await r.json();
+        if(typeof j.value !== 'undefined'){
+          setVal(j.value);
+          return;
+        } else {
+          throw new Error('Invalid JSON from hit');
+        }
+      }catch(primaryErr){
+        console.warn('Primary hit failed:', primaryErr);
+        try{
+          const r2 = await fetch(getUrl, {cache:'no-store'});
+          if(!r2.ok) throw new Error('Get failed status:'+r2.status);
+          const j2 = await r2.json();
+          if(typeof j2.value !== 'undefined'){
+            setVal(j2.value);
+            return;
+          } else {
+            throw new Error('Invalid JSON from get');
+          }
+        }catch(fallbackErr){
+          console.error('CountAPI fallback failed:', fallbackErr);
+          const backup = localStorage.getItem('visitorCountBackup');
+          if(backup){
+            el.textContent = backup + ' (cached)';
+          } else {
+            setError('Error');
+          }
+        }
+      }
+    }
+
+    if(retryBtn){
+      retryBtn.addEventListener('click', ()=> {
+        fetchCount();
+        retryBtn.disabled = true;
+        setTimeout(()=> retryBtn.disabled = false, 3000);
+      });
+    }
+
+    // initial run
+    fetchCount();
+    // update periodically
+    setInterval(fetchCount, 120 * 1000);
+  })();
+  </script>
 </body>
-              </html>
-              
+</html>
