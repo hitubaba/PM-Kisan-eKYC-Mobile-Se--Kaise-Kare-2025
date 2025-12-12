@@ -1,1 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>PM Kisan eKYC Guide — Hitubaba</title>
+    <link>https://hitubaba.github.io/</link>
+    <description>PM Kisan mobile eKYC guide, face authentication and status check — updated 2025. Step-by-step mobile instructions and troubleshooting.</description>
+    <language>hi-IN</language>
+    <lastBuildDate>Thu, 11 Dec 2025 12:00:00 +0530</lastBuildDate>
+    <pubDate>Thu, 11 Dec 2025 12:00:00 +0530</pubDate>
+    <managingEditor>hitesh@hitubaba.github.io (Hitesh)</managingEditor>
+    <webMaster>hitesh@hitubaba.github.io (Hitesh)</webMaster>
+    <ttl>1440</ttl>
+
+    <!-- Latest article item -->
+    <item>
+      <title>PM Kisan eKYC Mobile Se Kaise Kare 2025 — Complete Step-by-Step Guide</title>
+      <link>https://hitubaba.github.io/PM-Kisan-eKYC-Mobile-Se--Kaise-Kare-2025/</link>
+      <guid isPermaLink="true">https://hitubaba.github.io/PM-Kisan-eKYC-Mobile-Se--Kaise-Kare-2025/</guid>
+      <pubDate>Thu, 11 Dec 2025 12:00:00 +0530</pubDate>
+      <dc:creator>Hitesh</dc:creator>
+      <description><![CDATA[
+        PM Kisan eKYC mobile से कैसे करें — 2025 updated step-by-step guide. Aadhaar OTP, Face Authentication, status check, common errors and FAQ.
+      ]]></description>
+      <content:encoded><![CDATA[
+        <p>PM Kisan eKYC mobile से करना आज बहुत आसान है। इस guide में हम mobile से Aadhaar OTP के साथ eKYC और नए Face Authentication तरीके को step-by-step समझाएँगे — साथ में troubleshooting और FAQs भी दिए गए हैं।</p>
+        <p><a href="https://hitubaba.github.io/PM-Kisan-eKYC-Mobile-Se--Kaise-Kare-2025/">Read full guide →</a></p>
+      ]]></content:encoded>
+    </item>
+
+    <!-- Add more <item> blocks for additional posts -->
+  </channel>
+</rss>
 
